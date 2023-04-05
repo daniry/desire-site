@@ -1,20 +1,21 @@
-// JS-функция определения поддержки WebP
-export function isWebp() {
-  function testWebP(callback) {
-    let webP = new Image();
-    webP.onload = webP.onerror = function () {
-      callback(webP.height == 2);
-    };
-    webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-  }
-    
-  testWebP(function (support) {
-    let className = support === true ? 'webp' : 'no-webp';
-    document.documentElement.classList.add(className);
-    // if (support == true) {
-    //   document.querySelector('body').classList.add('webp');
-    // } else{
-    //   document.querySelector('body').classList.add('no-webp');
-    // }
-    });
-}
+import $ from "jquery";
+import "slick-carousel";
+
+$(function () {
+
+  $('.header__btn').on('click', function () {
+    $('.rightside-menu').removeClass('rightside-menu--close');
+  })
+  $('.rightside-menu__close').on('click', function () {
+    $('.rightside-menu').addClass('rightside-menu--close');
+  })
+
+  $('.top__slider').slick({
+    dots: true,
+    arrows: false,
+    fade: true,
+    autoplay: true,
+  });
+
+  
+})
