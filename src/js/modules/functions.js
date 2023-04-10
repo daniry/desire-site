@@ -1,5 +1,6 @@
 import $ from "jquery";
 import "slick-carousel";
+import mixitup from 'mixitup';
 
 $(function () {
 
@@ -17,5 +18,11 @@ $(function () {
     autoplay: true,
   });
 
+
+  var mixer = mixitup('.gallery__inner', {
+    load: {
+      filter: ".living",
+    }
+  });
   
 })
