@@ -278,6 +278,8 @@
 .breadcrumbs {
   background: rgba(#DFDFDF, .5);
   padding: 13px 14px;
+  position: relative;
+  z-index: 999;
   &__list {
     display: flex;
   }
@@ -360,7 +362,7 @@
 
 .new-collection {
   text-align: center;
-  padding: 45px 0 105px;
+  padding: 45px 0 35px;
 
   &__title {
     color: $title;
@@ -393,7 +395,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 30px;
-
+  padding-bottom: 70px;
   &__item {
     position: relative;
     &:hover {
@@ -610,6 +612,16 @@
     height: 100%;
     max-height: 1150px;
   }
+
+  &.gallery-page {
+    .gallery_item img {
+      max-height: 1165px;
+    }
+    .gallery_item:nth-child(8) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
 }
 
 
@@ -719,4 +731,91 @@
   }
 }
 
+.inspiration {
+  padding-top: 100px;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("@img/inspiration-bg.jpg");
+    height: 362px;
+    z-index: -1;
+  }
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__images {
+    margin-right: 78px;
+    margin-left: -230px;
+  }
+  &__content {
+    max-width: 825px;
+  }
+  &__title {
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+    line-height: 60px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #6D7278;
+      height: 1px;
+      width: 200px;
+    }
+  }
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    color: $title;
+    @extend %title-font;
+    line-height: 23px;
+    margin-bottom: 33px;
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #fff;
+      border-radius: 4px;
+    }
+  }
+  &__line {
+    height: 2px;
+    background-color: $title;
+    border-radius: 4px;
+    margin-top: -2px;
+  }
+}
+
+.partners {
+  padding: 16px 0 60px;
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  &__item-img {
+    margin: 0 auto;
+  }
+}
+
 // END About
+
+.map {
+  margin-top: -53px;
+}
+
+// END Map
+
+// END Map
