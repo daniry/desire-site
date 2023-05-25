@@ -34,6 +34,12 @@ $(function () {
     slidesToScroll: 10,
   });
 
+  $('.article-slider__box').slick({
+    prevArrow: '<button type="button" class="article-slider__arrow article-slider__arrow-left"><img src="../img/arrow-slide-back.svg" alt="arrow-slide-back"></button>',
+    nextArrow: '<button type="button" class="article-slider__arrow article-slider__arrow-right"><img src="../img/arrow-slide-next.svg" alt="arrow-slide-next"></button>',
+  });
+  
+
   if($('.gallery__inner').length) {
     var mixer = mixitup('.gallery__inner', {
       load: {
