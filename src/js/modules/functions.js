@@ -13,3 +13,9 @@ export let highlightMenuLink = function() {
     }
   })
 }
+
+export let moveBlock = function() {
+  if($(window).width() < 840) {
+    $('.works-path__item.--measurements').appendTo($('.works-path__items-box'))
+  }
+}
